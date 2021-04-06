@@ -36,7 +36,7 @@ class ToastBuilder
 	 * @param array $values
 	 * @return array
 	 */
-    public function toast(array $values): array {
+    public function toast(array $values = []): array {
         return [
             'type' => $values['type'] ?? $this->type,
             'title' => $values['title'] ?? $this->title,
