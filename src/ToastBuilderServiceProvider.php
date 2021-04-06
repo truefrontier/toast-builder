@@ -1,6 +1,6 @@
 <?php
 
-namespace Truefrontier\TeamInvites;
+namespace Truefrontier\ToastBuilder;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
