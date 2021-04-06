@@ -1,0 +1,55 @@
+{
+  "name": "truefrontier/toast-builder",
+  "description": "Customizable Toast session messages",
+  "keywords": [
+    "truefrontier",
+    "toast"
+  ],
+  "homepage": "https://github.com/truefrontier/toast-builder",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Dalton McCleery",
+      "email": "daltonmccleery@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Kevin Kirchner",
+      "email": "kevin@truefrontierapps.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Truefrontier\\ToastBuilder\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Truefrontier\\ToastBuilder\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Truefrontier\\ToastBuilder\\ToastBuilderServiceProvider"
+      ],
+      "aliases": {
+        "TeamInvites": "Truefrontier\\ToastBuilder\\ToastBuilderFacade"
+      }
+    }
+  }
+}
