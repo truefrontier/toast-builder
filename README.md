@@ -24,7 +24,25 @@ composer update
 
 Lastly, to use the Toast Builder class, you can call it like so:
 ```php
-TODO
+use Truefrontier\ToastBuilder\Classes\ToastBuilder;
+
+// Object
+$toast_builder = new ToastBuilder();
+$toast = $toast_builder->toast([
+    'type' => 'info', 
+    'title' => 'My New Toast', 
+    'body' => 'This is only a test!'
+]);
+
+// Inline
+$toast = (new ToastBuilder())->toast([
+    'type' => 'info', 
+    'title' => 'My New Toast', 
+    'body' => 'This is only a test!'
+]);
+
+// Predefined
+$toast = (new ToastBuilder(['type' => 'info']))->toast(['title' => 'Predefined Type']);
 ```
 
 ## License
