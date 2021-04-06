@@ -45,6 +45,23 @@ $toast = (new ToastBuilder())->toast([
 $toast = (new ToastBuilder(['type' => 'info']))->toast(['title' => 'Predefined Type']);
 ```
 
+## Inertia
+
+To use Toasts with Inertia, you'll have to update the Inertia Middleware to include:
+```php
+// app/Http/Middleware/HandleInertiaRequests.php
+
+use Truefrontier\ToastBuilder\Classes\ToastBuilder;
+
+public function share(Request $request)
+{
+  return array_merge(parent::share($request), [
+            
+    'toasts' => (new ToastBuilder())->shareInertia($request),
+  ]);
+}
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

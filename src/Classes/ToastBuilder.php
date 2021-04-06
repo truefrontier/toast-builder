@@ -50,4 +50,20 @@ class ToastBuilder
             'onAutohideComplete' => $values['onAutohideComplete'] ?? $this->onAutohideComplete
         ];
     }
+
+	/**
+	 * Share Toasts via session for Inertia
+	 *
+	 * @param $request
+	 * @return array
+	 */
+    public function shareInertia($request) {
+	    $toasts = $request->session()->get('toasts') ?? [];
+
+	    if ($request->session()->get('toast')) {
+		    $toasts[] = $request->session()->get('toast');
+	    }
+
+	    return $toasts;
+    }
 }
